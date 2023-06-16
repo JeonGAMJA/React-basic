@@ -15,20 +15,15 @@
   <script type="text/babel"></script>
   <script type="text/babel">
     const root = documemt.getElementById("root");
-    let counter = 0;
-    function countUp() {
-      counter = counter + 1;
-      render();
+    function App() {
+      const [counter, modifier] = React.useState();
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button onClick={countUp}>Click me</button>
+        </div>
+      );
     }
-    function render() {
-      ReactDOM.render(<Container />, root);
-    }
-    const Container = () => (
-      <div>
-        <h3>Total clicks: {counter}</h3>
-        <button onClick={countUp}>Click me</button>
-      </div>
-    );
 
     render();
   </script>
