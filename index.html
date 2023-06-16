@@ -16,11 +16,14 @@
   <script type="text/babel">
     const root = documemt.getElementById("root");
     function App() {
-      const [counter, modifier] = React.useState();
+      const [counter, setCounter] = React.useState();
+      const onClick = () => {
+        setCounter(counter + 1);
+      };
       return (
         <div>
           <h3>Total clicks: {counter}</h3>
-          <button onClick={countUp}>Click me</button>
+          <button onClick={onClick}>Click me</button>
         </div>
       );
     }
